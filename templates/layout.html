@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>Flaskr</title>
+<link rel=stylesheet type=text/css media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+</head>
+  <h1 style="text-align: center">Question and Answer</h1>
+  <div class=metanav>
+    <a href="{{ url_for('show_entries') }}">Asking</a> |
+    <a href="{{ url_for('answer') }}">Answering</a>
+  </div>
+  
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }} <a href="{{ url_for('answer') }}" class="pull-right" style="background-color: #FF7361; color: white; padding: 6px 10px; text-align: center; font-size: 22px; border-radius: 5px; font-weight: 300; line-height: -1px">See it</a>
+   </div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap.min.js"></script>
+<script>
+    $(".form-group.collapse").collapse();
+</script>
+</html>

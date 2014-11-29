@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="entries" style="padding-left: 50px">
+    <form action="{{ url_for('add_entry') }}" method=post class="add-entry" >
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Question:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Submit>
+      </dl>
+    </form>
+ </div>   
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Questions so far</h2>
+  <hr>
+
+     {% for entry in entries %}
+    <ul class="entries">
+        <img src="static/avatar1.png" class="img-circle img-thumbnail pull-left" width="70px" style="margin-right: 16px">
+    <li><h2>{{ entry.title }}</li>
+    <li class="ques_desc">Question: {{ entry.text|safe }}</li>
+
+    <script type="text/javascript">
+
+        var currentDate = new Date()
+        var day = currentDate.getDate()
+        var month = currentDate.getMonth() + 1
+        var year = currentDate.getFullYear()
+        document.write("<b>" + day + "/" + month+ "/" + year + "</b>")
+   </script>
+    <hr style="margin-bottom: -1px;">
+    <li style="margin-bottom: 16px;">
+
+        <a class="answer" data-toggle="collapse" data-target="#{{ entry.id }}" style="cursor: pointer"> <span class="glyphicon glyphicon-pencil"></span> answer</a>
+   <form action="{{ url_for('insert_answer') }}" method="post">
+    <li style="display: none"> <textarea name=ident rows="1" col="2">{{ entry.id }}</textarea> </li>
+    <li>
+      <div class="form-group collapse in" id="{{ entry.id }}">
+	<textarea  row="3" col="4" name="answered"></textarea><br>
+	<input type="submit" value="submit">
+      </div>
+    </li>
+    </form>
+    </ul>
+
+    <ul class="entries" style="background-color: #FF7361; color: white; margin-top: -12px; padding-bottom: 20px; margin-bottom: 20px;">
+    <div class="" id="">
+    {% for answering in answered if answering.ident == entry.id  %}
+            <li><b>Anonymous:</b> {{ answering.answer|safe }}</li>
+    <script type="text/javascript">
+
+        var currentDate = new Date()
+        var day = currentDate.getDate()
+        var month = currentDate.getMonth() + 1
+        var year = currentDate.getFullYear()
+        document.write("<b>" + day + "/" + month+ "/" + year + "</b>")
+   </script> 
+    {% else %}
+    <li><b>No answer so far</b></li>
+    {% endfor %}
+    </div>
+    </ul>
+
+   {% endfor %}
+
+     
+{% endblock %}

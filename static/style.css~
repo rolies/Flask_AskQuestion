@@ -1,0 +1,43 @@
+body            { background-color: #eee; }
+a, h1, h2       { color: #2F3239; }
+a:hover 	{ text-decoration: none;}
+h1, h2          { margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+.page           { margin: 2em auto; width: 800px;
+                  padding: 0.8em; }
+.ques_desc {
+	color: #84891;
+	font-size: 13px;
+}
+.entries        { 
+	list-style: none; 
+	padding-right: 45px;
+	padding-top: 20px;
+	background-color: white;
+    	box-shadow: 0 0 5px #dedede;
+	border: 1px solid #dedede;
+    	box-sizing: border-box;
+	
+}
+.entries li {
+
+}
+
+.entries li:last-child    {
+	
+	 
+}
+.entries li h2  {
+	font-weight: 700;
+	color: #2f3239;
+	font-size: 24px;
+	margin-right: 10px;
+ }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }

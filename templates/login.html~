@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Questions so far</h2>
+
+      <ul class="entries">
+     {% for entry in entries %}
+    <li><h2>title: {{ entry.title }}</h2></li>
+    <li>Question: {{ entry.text|safe }} <a class="answer" href="#" data-toggle="collapse" data-target="#{{ entry.id }}">answer</a></li>
+
+    <div class="form-group collapse in" id="{{ entry.id }}">
+	<textarea  row="2" col="3"> </textarea>
+	<input type="submit" value="submit">
+    </div>
+     {% endfor %}
+     </ul>
+{% endblock %}
