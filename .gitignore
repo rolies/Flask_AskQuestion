@@ -1,14 +1,3 @@
-# Exclude the .htaccess file
-.htaccess
- 
-# Exclude Text Files
-*.txt
-# Except read me
-!README.txt
-
-# Exclude log files
 *.log
-
-# Exclude flask folder
+.htaccess
 flaskr/
- 
